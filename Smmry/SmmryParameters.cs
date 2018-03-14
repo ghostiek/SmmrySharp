@@ -64,7 +64,6 @@ namespace Smmry
             //Skips SM_URL because that should be last and concats every parameter that is defined
             string url = $"?{string.Join("&", this.Where(x => x.Key != "SM_URL").Select(item => $"{item.Key}={item.Value}"))}";
             return string.Concat(url, $"&SM_URL={Url}");
-
         }
     }
 }

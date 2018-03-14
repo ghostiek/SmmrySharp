@@ -8,13 +8,13 @@ namespace Smmry
 {
     public class SmmryDownloader
     {
-        public static HttpClient Client = new HttpClient();
+        private static HttpClient Client = new HttpClient();
         
         public async Task<string> GetJsonAsync(Dictionary<string, object> smmryParameters)
         {
-            var url = new StringBuilder($@"http://api.smmry.com{smmryParameters}");
+            var url = $@"http://api.smmry.com/{smmryParameters}";
 
-            using (var responsemessage = await Client.GetAsync(url.ToString()))
+            using (var responsemessage = await Client.GetAsync(url))
             using (var content = responsemessage.Content)
             {
                 return await content.ReadAsStringAsync();
