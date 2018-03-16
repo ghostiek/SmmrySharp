@@ -16,7 +16,7 @@ var smmryParam = new SmmryParameters()
         IncludeBreaks = true,
         IncludeQuotes = true
     };
-var smmry = new SmmryDownloader().Smmry;
+var smmry = new SmmryDownloader(smmryParam).Smmry;
 ```
 
 Note: Every parameter is optional except your API key and website URL
