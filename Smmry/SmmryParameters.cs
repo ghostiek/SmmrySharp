@@ -2,9 +2,9 @@
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Reflection;
-using Smmry.Attributes;
+using SmmrySharp.Attributes;
 
-namespace Smmry
+namespace SmmrySharp
 {
     public class SmmryParameters : Dictionary<string, object>
     {

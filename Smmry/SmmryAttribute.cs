@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Smmry.Attributes
+namespace SmmrySharp.Attributes
 {
     [AttributeUsage(AttributeTargets.Property)]
     class SmmryParameterAttribute : Attribute
