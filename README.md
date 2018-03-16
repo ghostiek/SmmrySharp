@@ -16,14 +16,7 @@ var smmryParam = new SmmryParameters()
         IncludeBreaks = true,
         IncludeQuotes = true
     };
-var smmryDownloader = new SmmryDownloader();
-var json = smmryDownloader.GetJsonAsync(smmryParams);
+var smmry = new SmmryDownloader().Smmry;
 ```
 
 Note: Every parameter is optional except your API key and website URL
-
-# TODO
-
-  1) Deserialize the JSON to make the data more user-friendly
-
-Otherwise the Library is pretty straighforward and fully functional.
