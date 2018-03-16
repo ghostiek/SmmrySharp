@@ -8,6 +8,7 @@ namespace SmmrySharp
 {
     public class SmmryParameters : Dictionary<string, object>
     {
+
         [SmmryParameter("SM_API_KEY")]
         public string ApiKey
         {
