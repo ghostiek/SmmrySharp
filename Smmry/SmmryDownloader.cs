@@ -2,6 +2,8 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using System;
+using System.Linq;
 
 
 namespace SmmrySharp
@@ -20,11 +22,17 @@ namespace SmmrySharp
         {
             Json = GetJsonAsync(smmryParameters).GetAwaiter().GetResult();
             Smmry = JsonConvert.DeserializeObject<Smmry>(Json);
+            
+            if(Smmry.GetType().GetProperties().All(x=> x.GetValue(Smmry) == null))
+            {
+                var error = JsonConvert.DeserializeObject<Error>(Json);
+                throw new SmmryException($"{error.Code}: {error.Message}");
+            }
         }
 
         private async Task<string> GetJsonAsync(Dictionary<string, object> smmryParameters)
         {
-            var url = $@"{BaseUrl}{smmryParameters}";
+            var url = BaseUrl + smmryParameters;
 
             using (var responsemessage = await Client.GetAsync(url))
             using (var content = responsemessage.Content)
@@ -32,5 +40,6 @@ namespace SmmrySharp
                 return await content.ReadAsStringAsync();
             }
         }
+
     }
 }

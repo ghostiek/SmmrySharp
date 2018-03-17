@@ -12,42 +12,42 @@ namespace SmmrySharp
         [SmmryParameter("SM_API_KEY")]
         public string ApiKey
         {
-            get => (string)this[GetSmmryParameterName()];
+            get => (string)(TryGetValue(GetSmmryParameterName(), out var result) ? result : null);
             set => this[GetSmmryParameterName()] = value;
         }
 
         [SmmryParameter("SM_URL")]
         public string Url
         {
-            get => (string)this[GetSmmryParameterName()];
+            get => (string)(TryGetValue(GetSmmryParameterName(), out var result) ? result : null);
             set => this[GetSmmryParameterName()] = value;
         }
 
         [SmmryParameter("SM_LENGTH")]
         public int? SentenceCount
         {
-            get => (int?)this[GetSmmryParameterName()];
+            get => (int?)(TryGetValue(GetSmmryParameterName(), out var result) ? result : null);
             set => this[GetSmmryParameterName()] = value;
         }
 
         [SmmryParameter("SM_KEYWORD_COUNT")]
         public int? KeywordCount
         {
-            get => (int?)this[GetSmmryParameterName()];
+            get => (int?)(TryGetValue(GetSmmryParameterName(), out var result) ? result : null);
             set => this[GetSmmryParameterName()] = value;
         }
 
         [SmmryParameter("SM_QUOTE_AVOID")]
         public bool? IncludeQuotes
         {
-            get => (bool?)this[GetSmmryParameterName()];
+            get => (bool?)(TryGetValue(GetSmmryParameterName(), out var result) ? result : null);
             set => this[GetSmmryParameterName()] = value;
         }
 
         [SmmryParameter("SM_WITH_BREAK")]
         public bool? IncludeBreaks
         {
-            get => (bool?)this[GetSmmryParameterName()];
+            get => (bool?)(TryGetValue(GetSmmryParameterName(), out var result) ? result : null);
             set => this[GetSmmryParameterName()] = value;
         }
 
