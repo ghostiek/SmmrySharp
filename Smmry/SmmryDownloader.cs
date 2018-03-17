@@ -25,7 +25,7 @@ namespace SmmrySharp
             
             if(Smmry.GetType().GetProperties().All(x=> x.GetValue(Smmry) == null))
             {
-                var error = JsonConvert.DeserializeObject<Error>(Json);
+                var error = JsonConvert.DeserializeObject<SmmryError>(Json);
                 throw new SmmryException($"{error.Code}: {error.Message}");
             }
         }

@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace SmmrySharp
 {
-    public class Error
+    public class SmmryError
     {
         [JsonProperty("sm_api_error")]
         public int Code { get; private set; }
