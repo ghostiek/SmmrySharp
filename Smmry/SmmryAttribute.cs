@@ -5,8 +5,13 @@ namespace SmmrySharp.Attributes
     [AttributeUsage(AttributeTargets.Property)]
     class SmmryParameterAttribute : Attribute
     {
-        private readonly string _name;
-        public SmmryParameterAttribute(string name) { _name = name; }
-        public override string ToString() => _name;
+        public string Name { get; set; }
+        public bool HasParameter { get; private set; }
+        public SmmryParameterAttribute(string name, bool hasParameter)
+        {
+            Name = name;
+            HasParameter = hasParameter;
+        }
+        public override string ToString() => Name;
     }
 }
