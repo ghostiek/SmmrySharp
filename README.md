@@ -2,6 +2,7 @@
  
 This is a library written in C# for http://smmry.com/
 
+Available on NuGet https://www.nuget.org/packages/SmmrySharp/
 
 # Example
 
