@@ -9,7 +9,7 @@ namespace SmmrySharp
     public class SmmryParameters : Dictionary<string, object>
     {
         /// <summary>
-        /// Your API Key
+        /// Your API Key.
         /// </summary>
         [SmmryParameter("SM_API_KEY", true)]
         public string ApiKey
@@ -19,7 +19,7 @@ namespace SmmrySharp
         }
 
         /// <summary>
-        /// The webpage to summarize
+        /// The webpage to summarize.
         /// </summary>
         [SmmryParameter("SM_URL", true)]
         public string Url
@@ -39,7 +39,7 @@ namespace SmmrySharp
         }
 
         /// <summary>
-        /// The number of keywords to return
+        /// The number of keywords to return.
         /// </summary>
         [SmmryParameter("SM_KEYWORD_COUNT", true)]
         public int? KeywordCount
@@ -49,7 +49,7 @@ namespace SmmrySharp
         }
 
         /// <summary>
-        /// Decides if the string [BREAK] will be inserted between sentences
+        /// Decides if the string [BREAK] will be inserted between sentences. Default won't include them.
         /// </summary>
         [SmmryParameter("SM_WITH_BREAK", false)]
         public bool? IncludeBreaks
@@ -59,7 +59,7 @@ namespace SmmrySharp
         }
 
         /// <summary>
-        /// Decides if the HTML entities will be converted to their applicable chars
+        /// Decides if the HTML entities will be converted to their applicable chars. Default won't encode.
         /// </summary>
         [SmmryParameter("SM_WITH_ENCODE", false)]
         public bool? Encode
@@ -69,7 +69,7 @@ namespace SmmrySharp
         }
 
         /// <summary>
-        /// Returns summary regardless of quality or length
+        /// Returns summary regardless of quality or length. Default won't Ignore length.
         /// </summary>
         [SmmryParameter("SM_IGNORE_LENGTH", false)]
         public bool? IgnoreLength
@@ -79,7 +79,7 @@ namespace SmmrySharp
         }
 
         /// <summary>
-        /// Decides if Sentences with quotations will be included.
+        /// Decides if Sentences with quotations will be included. Default will include them.
         /// </summary>
         [SmmryParameter("SM_QUOTE_AVOID", false)]
         public bool? IncludeQuotes
@@ -90,7 +90,7 @@ namespace SmmrySharp
         }
 
         /// <summary>
-        /// Decides if the summary should include questions or not
+        /// Decides if the summary should include questions or not. Default will include them.
         /// </summary>
         [SmmryParameter("SM_QUESTION_AVOID", false)]
         public bool? IncludeQuestion
@@ -100,7 +100,7 @@ namespace SmmrySharp
         }
 
         /// <summary>
-        /// Decides if the summary should include sentences with exclamation marks  or not
+        /// Decides if the summary should include sentences with exclamation marks or not. Default will include them.
         /// </summary>
         [SmmryParameter("SM_EXCLAMATION_AVOID", false)]
         public bool? IncludeExclamation
